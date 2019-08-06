@@ -1,5 +1,13 @@
 import numpy as np
 import imageio
+import subprocess
+
+def git(*args):
+    return subprocess.check_call(['git'] + list(args))
+
+
+git("clone", "https://github.com/seshuad/IMagenet")
+
 
 def get_id_dictionary():
     id_dict = {}
