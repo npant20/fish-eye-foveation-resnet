@@ -185,6 +185,6 @@ def warp_image(img, output_size, input_size=None, shift=None, dxc = 0, dyc = 0):
   indices = tf.concat([row_ind, col_ind], 1)
   xy_out = warp_func(indices, tf.cast(original_shape, tf.float32), retina_func, retina_pars, shift, dxc, dyc)
 
-  out = tf.reshape(tf.gather_nd(img, xy_out), [output_size, output_size, 3])
+  out = tf.reshape(tf.gather_nd(img, xy_out), [output_size, output_size, 3]) 
   return out
 
